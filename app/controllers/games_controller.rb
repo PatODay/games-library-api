@@ -1,5 +1,8 @@
-class GamesController < ApplicationController
-  before_action :set_game, only: [:show, :update, :destroy]
+# frozen_string_literal: true
+
+# class GamesController < ApplicationController
+class GamesController < ProtectedController
+  before_action :set_game, only: %i[show update destroy]
 
   # GET /games
   def index
@@ -15,7 +18,7 @@ class GamesController < ApplicationController
 
   # POST /games
   def create
-    @game = Game.new(game_params)
+    @game = current_user.games.build(game_params)
 
     if @game.save
       render json: @game, status: :created, location: @game
@@ -39,13 +42,14 @@ class GamesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_game
-      @game = Game.find(params[:id])
-    end
 
-    # Only allow a trusted parameter "white list" through.
-    def game_params
-      params.require(:game).permit(:title)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_game
+    @game = current_user.games.find(params[:id])
+  end
+
+  # Only allow a trusted parameter "white list" through.
+  def game_params
+    params.require(:game).permit(:title)
+  end
 end

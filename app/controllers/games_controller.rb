@@ -13,7 +13,7 @@ class GamesController < ProtectedController
 
   # GET /games/1
   def show
-    render json: Game.find(params[:id])
+    render json: @game
   end
 
   # POST /games
@@ -50,6 +50,6 @@ class GamesController < ProtectedController
 
   # Only allow a trusted parameter "white list" through.
   def game_params
-    params.require(:game).permit(:title, :user_id)
+    params.require(:game).permit(:title)
   end
 end

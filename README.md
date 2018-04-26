@@ -23,8 +23,8 @@ This is my first experience working with Ruby on Rails and a backend API. I was 
 
 # Games Library Client Links
 
-[Games Library Client GitHub Repo](https://github.com/PatODay/game-library-client)
-[Games Library Deployed Client](https://patoday.github.io/game-library-client/)
+  * [Games Library Client GitHub Repo](https://github.com/PatODay/game-library-client)
+  * [Games Library Deployed Client](https://patoday.github.io/game-library-client/)
 
 # ERD
 

@@ -28,7 +28,7 @@ This is my first experience working with Ruby on Rails and a backend API. I was 
 
 # ERD
 
-[ERD](https://i.imgur.com/VJsBPBa.jpg)
+[ERD](https://i.imgur.com/lflvoPG.jpg)
 
 # Technologies Used
 
